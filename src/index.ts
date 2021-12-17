@@ -1,3 +1,3 @@
-class Logger {}
+import { Logger } from './logger';
 
 export default new Logger();
