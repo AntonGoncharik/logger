@@ -1,5 +1,4 @@
 import { Journal } from './journal';
-import { Options } from './options';
 
 export class Logger {
   private static instance: Logger;
@@ -8,6 +7,7 @@ export class Logger {
     if (Logger.instance) {
       return Logger.instance;
     }
+    Logger.instance = this;
   }
 
   journal() {

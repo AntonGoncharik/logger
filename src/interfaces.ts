@@ -1,6 +1,9 @@
-export type ColorType = 'error' | 'fatal' | 'warn' | 'info' | 'trace' | 'debug';
+export type MessageType = 'ERROR' | 'WARN' | 'INFO' | 'TRACE' | 'DEBUG' | 'LOG';
 
-export interface Output {
-  console: boolean;
+export interface JournalOptions {
+  name: string;
+  root: string;
+  dirname: string;
   file: boolean;
+  console: boolean;
 }

@@ -1,35 +1,38 @@
-import { ColorType, Output } from './interfaces';
+import { MessageType, JournalOptions } from './interfaces';
+import {
+  COLOR_ERROR,
+  COLOR_WARN,
+  COLOR_INFO,
+  COLOR_TRACE,
+  COLOR_DEBUG,
+} from './constants';
 
 export class Options {
-  private static instance: Options;
-  private output: Output = {
+  private static output: JournalOptions = {
+    name: 'log',
+    root: 'logs',
+    dirname: '',
     console: true,
     file: false,
   };
-  private colors: {
-    error: '\x1b[31m%s\x1b[0m';
-    fatal: '\x1b[35m%s\x1b[0m';
-    warn: '\x1b[33m%s\x1b[0m';
-    info: '\x1b[36m%s\x1b[0m';
-    trace: '\x1b[37m%s\x1b[0m';
-    debug: '\x1b[32m%s\x1b[0m';
+  private static colors: {
+    ERROR: typeof COLOR_ERROR;
+    WARN: typeof COLOR_WARN;
+    INFO: typeof COLOR_INFO;
+    TRACE: typeof COLOR_TRACE;
+    DEBUG: typeof COLOR_DEBUG;
+    LOG: typeof COLOR_DEBUG;
   };
 
-  constructor() {
-    if (Options.instance) {
-      return Options.instance;
-    }
-  }
-
-  getColor(colorType: ColorType): string {
+  static getColor(colorType: MessageType): string {
     return this.colors[colorType];
   }
 
-  getOutput(): Output {
+  static getOutput(): JournalOptions {
     return this.output;
   }
 
-  setOutput(output: Output): void {
+  static setOutput(output: JournalOptions): void {
     this.output = output;
   }
 }
