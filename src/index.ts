@@ -1,3 +1,3 @@
 import { Logger } from './logger';
 
-export default new Logger();
+export = new Logger();

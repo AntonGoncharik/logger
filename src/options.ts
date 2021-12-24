@@ -10,18 +10,17 @@ import {
 export class Options {
   private static output: JournalOptions = {
     name: 'log',
-    root: 'logs',
-    dirname: '',
+    dirname: 'logs',
     console: true,
     file: false,
   };
-  private static colors: {
-    ERROR: typeof COLOR_ERROR;
-    WARN: typeof COLOR_WARN;
-    INFO: typeof COLOR_INFO;
-    TRACE: typeof COLOR_TRACE;
-    DEBUG: typeof COLOR_DEBUG;
-    LOG: typeof COLOR_DEBUG;
+  private static colors = {
+    ERROR: COLOR_ERROR,
+    WARN: COLOR_WARN,
+    INFO: COLOR_INFO,
+    TRACE: COLOR_TRACE,
+    DEBUG: COLOR_DEBUG,
+    LOG: COLOR_DEBUG,
   };
 
   static getColor(colorType: MessageType): string {

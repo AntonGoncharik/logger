@@ -1,3 +1,5 @@
+import { mkdirSync } from 'fs';
+
 import { Writer } from './writer';
 import { Options } from './options';
 import { JournalOptions, MessageType } from './interfaces';
@@ -9,16 +11,20 @@ export class Journal {
   constructor(name: string, options?: JournalOptions) {
     this.options = {
       name: name || Options.getOutput().name,
-      root: options?.root ?? Options.getOutput().root,
       dirname: options?.dirname ?? Options.getOutput().dirname,
       file: options?.file ?? Options.getOutput().file,
       console: options?.console ?? Options.getOutput().console,
     };
+
+    if (this.options.file && this.options.dirname) {
+      mkdirSync(this.options.dirname, { recursive: true });
+    }
   }
 
   private getTemplateMessage(message: string, level: MessageType): string {
-    return `[${level}] - [${this.options.name}] - [${new Date().toISOString()}]
-    ${message}`;
+    return `[${level}] - [${
+      this.options.name
+    }] - [${new Date().toISOString()}]\n${message}\n`;
   }
 
   error(message: string): void {
