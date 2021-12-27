@@ -30,8 +30,4 @@ export class Options {
   static getOutput(): JournalOptions {
     return this.output;
   }
-
-  static setOutput(output: JournalOptions): void {
-    this.output = output;
-  }
 }

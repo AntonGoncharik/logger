@@ -24,7 +24,7 @@ export class Journal {
   private getTemplateMessage(message: string, level: MessageType): string {
     return `[${level}] - [${
       this.options.name
-    }] - [${new Date().toISOString()}]\n${message}\n`;
+    }] - [${new Date().toISOString()}]\n<<${message}>>\n`;
   }
 
   error(message: string): void {
