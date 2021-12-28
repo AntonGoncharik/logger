@@ -6,6 +6,8 @@
 
 `yarn add @anton.goncharik/logger`
 
+https://github.com/AntonGoncharik/logger
+
 ## 🔨 API
 
 ##### Logger
@@ -86,7 +88,7 @@ file - flag to write to file
 
 #
 
-#### Example
+#### Output example
 
 ##### [INFO] - [server] - [2021-12-26T21:16:17.684Z]
 
