@@ -3,6 +3,10 @@ import { Journal } from './journal';
 export class Logger {
   private static instance: Logger;
 
+  /**
+   * @constructor
+   * @returns logger
+   */
   constructor() {
     if (Logger.instance) {
       return Logger.instance;
@@ -10,6 +14,10 @@ export class Logger {
     Logger.instance = this;
   }
 
+  /**
+   *
+   * @returns journal
+   */
   journal() {
     return Journal;
   }
