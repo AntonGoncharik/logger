@@ -1,6 +1,6 @@
 {
   "name": "@anton.goncharik/logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Logger for Node.js to the console, file",
   "main": "./dist/index.js",
   "repository": {
