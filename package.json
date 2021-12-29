@@ -16,7 +16,7 @@
     "dev": "nodemon ./src/index.ts",
     "start": "node ./dist/index.js",
     "build": "tsc",
-    "doc": "npx typedoc --entryPointStrategy expand ./src",
+    "doc": "node_modules/.bin/typedoc --entryPointStrategy expand ./src",
     "publish": "yarn run build && yarn version patch && yarn publish --access public"
   },
   "devDependencies": {
