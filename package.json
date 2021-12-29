@@ -5,8 +5,9 @@
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:AntonGoncharik/logger.git"
+    "url": "git+https://github.com/AntonGoncharik/logger.git"
   },
+  "homepage": "https://github.com/AntonGoncharik/logger#readme",
   "keywords": [
     "logger"
   ],
