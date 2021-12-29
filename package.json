@@ -18,7 +18,7 @@
     "start": "node ./dist/index.js",
     "build": "tsc",
     "doc": "node_modules/.bin/typedoc --entryPointStrategy expand ./src",
-    "publish": "yarn run build && yarn version patch && yarn publish --access public"
+    "publish": "yarn run build && yarn version --patch && yarn publish --access public"
   },
   "devDependencies": {
     "@types/node": "^16.11.13",
