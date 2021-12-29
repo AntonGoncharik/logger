@@ -7,9 +7,9 @@ import { Options } from './options';
 export class Writer {
   /**
    *
-   * @param message {string} - your message
-   * @param level {MessageType} - message type example ERROR, INFO etc...
-   * @param options - {JournalOptions} - journal options
+   * @param message {string} your message
+   * @param level {MessageType} message type example ERROR, INFO etc...
+   * @param options {JournalOptions} journal options
    */
   static write(
     message: string,
@@ -26,8 +26,8 @@ export class Writer {
 
   /**
    *
-   * @param message {string} - your message
-   * @param level {MessageType} - message type example ERROR, INFO etc...
+   * @param message {string} your message
+   * @param level {MessageType} message type example ERROR, INFO etc...
    */
   static writeConsole(message: string, level: MessageType): void {
     const color = Options.getColor(level);
@@ -56,8 +56,8 @@ export class Writer {
 
   /**
    *
-   * @param message {string} - your message
-   * @param options {JournalOptions} - journal options
+   * @param message {string} your message
+   * @param options {JournalOptions} journal options
    */
   static async writeFile(
     message: string,

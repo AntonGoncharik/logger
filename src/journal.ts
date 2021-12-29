@@ -10,12 +10,12 @@ export class Journal {
 
   /**
    * @constructor
-   * @param name {string} - name of the journal and file name log
-   * @param options {JournalOptions} - journal options
-   * @param options.name {string} - name of the journal and file name log
-   * @param options.dirname {string} - dirname for file log
-   * @param options.file {boolean} - flag to write to file
-   * @param options.console {boolean} - flag to write to console
+   * @param name {string} name of the journal and file name log
+   * @param options {JournalOptions} journal options
+   * @param options.name {string} name of the journal and file name log
+   * @param options.dirname {string} dirname for file log
+   * @param options.file {boolean} flag to write to file
+   * @param options.console {boolean} flag to write to console
    */
   constructor(name: string, options?: JournalOptions) {
     this.options = {
@@ -32,9 +32,9 @@ export class Journal {
 
   /**
    *
-   * @param message {string} - your message
-   * @param level {MessageType} - message type example ERROR, INFO etc...
-   * @return
+   * @param message {string} your message
+   * @param level {MessageType} message type example ERROR, INFO etc...
+   * @returns {string} template with your message
    */
   private getTemplateMessage(message: string, level: MessageType): string {
     return `[${level}] - [${
@@ -44,7 +44,7 @@ export class Journal {
 
   /**
    *
-   * @param message {string} - your message
+   * @param message {string} your message
    */
   error(message: string): void {
     const template = this.getTemplateMessage(message, ERROR);
@@ -53,7 +53,7 @@ export class Journal {
 
   /**
    *
-   * @param message {string} - your message
+   * @param message {string} your message
    */
   warn(message: string): void {
     const template = this.getTemplateMessage(message, WARN);
@@ -62,7 +62,7 @@ export class Journal {
 
   /**
    *
-   * @param message {string} - your message
+   * @param message {string} your message
    */
   info(message: string): void {
     const template = this.getTemplateMessage(message, INFO);
@@ -71,7 +71,7 @@ export class Journal {
 
   /**
    *
-   * @param message {string} - your message
+   * @param message {string} your message
    */
   trace(message: string): void {
     const template = this.getTemplateMessage(message, TRACE);
@@ -80,7 +80,7 @@ export class Journal {
 
   /**
    *
-   * @param message {string} - your message
+   * @param message {string} your message
    */
   debug(message: string): void {
     const template = this.getTemplateMessage(message, DEBUG);
@@ -89,7 +89,7 @@ export class Journal {
 
   /**
    *
-   * @param message {string} - your message
+   * @param message {string} your message
    */
   log(message: string): void {
     const template = this.getTemplateMessage(message, LOG);

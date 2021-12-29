@@ -17,6 +17,7 @@ export class Options {
     console: true,
     file: false,
   };
+
   /**
    * Colors for message in console
    */
